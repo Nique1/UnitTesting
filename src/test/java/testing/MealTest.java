@@ -2,6 +2,10 @@ package testing;
 
 import org.junit.jupiter.api.Test;
 
+//import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MealTest {
@@ -26,8 +30,10 @@ class MealTest {
         //when
 
         //then
-
         assertSame(meal1,meal2);
+
+        //assertJ
+        assertThat(meal1).isSameAs(meal2);
     }
     @Test
     void referencesToDifferentObjectsShouldNotBeEqual(){
@@ -37,6 +43,8 @@ class MealTest {
         //when
         //then
         assertNotSame(meal1,meal2);
+        //hamcrest
+//        assertThat(meal1, not(sameInstance(meal2)));
     }
     @Test
     void twoMealsShouldBeEqualWhenPriceAndNameAreTheSame(){
