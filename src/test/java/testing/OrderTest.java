@@ -1,5 +1,7 @@
 package testing;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -10,7 +12,19 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class OrderTest {
+    private Order order;
 
+    @BeforeEach
+    void initializeOrder(){
+        System.out.println("Inside @BeforeEach");
+        order = new Order();
+    }
+
+    @AfterEach
+    void cleanUp(){
+        System.out.println("Inside @AfterEach");
+        order.clear();
+    }
     @Test
     void testAssertArrayEquals() {
         //given
@@ -24,7 +38,6 @@ class OrderTest {
     @Test
     void mealListShouldBeEmptyAfterCreationOfOrder(){
         //given
-        Order order = new Order();
         //when
         //then
         assertThat(order.getMeals(),empty());
@@ -39,7 +52,6 @@ class OrderTest {
         //given
         Meal meal = new Meal(20, "Pizza");
         Meal meal2 = new Meal(25, "Pasta");
-        Order order = new Order();
         //when
         order.addMealToOrder(meal);
         //then
@@ -52,7 +64,6 @@ class OrderTest {
     void removingMealFromOrderShouldDecreaseOrderSize(){
         //given
         Meal meal = new Meal(20, "Pizza");
-        Order order = new Order();
         //when
         order.addMealToOrder(meal);
         order.removeMealFromOrder(meal);
@@ -66,7 +77,6 @@ class OrderTest {
         //given
         Meal meal1 = new Meal(20, "Pizza");
         Meal meal2 = new Meal(25, "Pasta");
-        Order order = new Order();
         //when
         order.addMealToOrder(meal1);
         order.addMealToOrder(meal2);
@@ -81,7 +91,6 @@ class OrderTest {
         Meal meal1 = new Meal(20, "Pizza");
         Meal meal2 = new Meal(25, "Pasta");
         Meal meal3 = new Meal(10, "Sandwich");
-        Order order = new Order();
         //when
         List<Meal> meals1 = Arrays.asList(meal1,meal2,meal3);
         List<Meal> meals2 = Arrays.asList(meal1,meal2,meal3);
