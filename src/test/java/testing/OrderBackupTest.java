@@ -33,7 +33,7 @@ class OrderBackupTest {
         //then
         System.out.println("Order: " + order.toString() + " backed up");
     }
-    
+
     @AfterEach
     void appendAtTheEndOfTheFile() throws IOException {
         orderBackup.getWriter().append("End of the order");
