@@ -1,5 +1,6 @@
 package testing;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 //import static org.hamcrest.MatcherAssert.assertThat;
@@ -8,6 +9,7 @@ import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Test cases for MealTest")
 class MealTest {
     @Test
     void shouldReturnDiscountedPrice() {
@@ -23,6 +25,7 @@ class MealTest {
 
     //porownywanie referencji obiektu
     @Test
+    @DisplayName("Object meal1 is equal to object meal2")
     void referencesToTheSameObjectsShouldBeEqual(){
         //given
         Meal meal1 = new Meal(10);
