@@ -105,7 +105,7 @@ class MealTest {
         assertThat(name, notNullValue());
         assertThat(name,containsString("cake"));
     }
-    
+
     //method that is the source of the arguments for parametrizedTest above
     private static Stream<String> createCakeNames(){
         List<String> cakeNames = Arrays.asList("Cheesecake", "Cupcake", "Brownie");
