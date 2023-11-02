@@ -1,6 +1,7 @@
 package testing;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -16,6 +17,14 @@ class AddressTest {
     })
 
     void givenAddressesShouldNotBeEmpty(String street, String number){
+        assertThat(street, notNullValue());
+        assertThat(number, notNullValue());
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/addresses.csv")
+
+    void givenAddressesFromFileShouldNotBeEmpty(String street, String number){
         assertThat(street, notNullValue());
         assertThat(number, notNullValue());
     }
