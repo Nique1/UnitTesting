@@ -112,4 +112,14 @@ class OrderTest {
         assertThrows(IllegalStateException.class, () -> order.totalPrice());
     }
 
+    @Test
+    void emptyOrderTotalPriceShouldEqualZero() {
+        //given
+        //Order is created id @BeforeEach
+
+        //when
+        //then
+        assertThat(order.totalPrice(), is(0));
+    }
+
 }
