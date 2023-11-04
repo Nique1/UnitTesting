@@ -10,6 +10,7 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class OrderTest {
     private Order order;
@@ -97,6 +98,18 @@ class OrderTest {
 
         //then
         assertThat(meals1, is(meals2));
+    }
+
+    @Test
+    void orderTotalPriceShouldNotExceedMaxIntValue(){
+        //given
+        Meal meal1 = new Meal(Integer.MAX_VALUE,"Pizza");
+        Meal meal2 = new Meal(Integer.MAX_VALUE,"Pasta");
+        //when
+        order.addMealToOrder(meal1);
+        order.addMealToOrder(meal2);
+        //then
+        assertThrows(IllegalStateException.class, () -> order.totalPrice());
     }
 
 }
