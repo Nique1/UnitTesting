@@ -1,9 +1,6 @@
 package testing;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -66,6 +63,7 @@ class MealTest {
         assertThat(meal1).isSameAs(meal2);
     }
 
+
     @Test
     void referencesToDifferentObjectsShouldNotBeEqual() {
         //given
@@ -78,6 +76,7 @@ class MealTest {
 //        assertThat(meal1, not(sameInstance(meal2)));
     }
 
+    @Tag("pizza")
     @Test
     void twoMealsShouldBeEqualWhenPriceAndNameAreTheSame() {
         //given
@@ -124,6 +123,7 @@ class MealTest {
         return price * quantity;
     }
 
+    @Tag("pizza")
     @TestFactory
     Collection<DynamicTest> calculateMealPrices() {
         Order order = new Order();
