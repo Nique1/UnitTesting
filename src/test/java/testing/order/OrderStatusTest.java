@@ -1,11 +1,11 @@
-package testing;
+package testing.order;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
+import testing.order.OrderStatus;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.lessThan;
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderStatusTest {
     @ParameterizedTest

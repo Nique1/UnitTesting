@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import testing.order.Order;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -126,7 +127,7 @@ class MealTest {
     @Tag("pizza")
     @TestFactory
     Collection<DynamicTest> calculateMealPrices() {
-        Order order = new Order();
+        testing.order.Order order = new Order();
         order.addMealToOrder(new Meal(20, "Pizza", 4));
         order.addMealToOrder(new Meal(15, "Pasta", 5));
         order.addMealToOrder(new Meal(9, "Cake", 2));
