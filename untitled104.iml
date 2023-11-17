@@ -36,5 +36,9 @@
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-commons:9.6" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:9.6" level="project" />
     <orderEntry type="library" name="Maven: org.jacoco:org.jacoco.report:0.8.11" level="project" />
+    <orderEntry type="library" name="Maven: org.mockito:mockito-junit-jupiter:5.7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mockito:mockito-core:5.7.0" level="project" />
+    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-agent:1.14.9" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.objenesis:objenesis:3.3" level="project" />
   </component>
 </module>
